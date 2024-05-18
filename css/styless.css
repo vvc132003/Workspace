@@ -1,0 +1,73 @@
+.board-header {
+    position: fixed;
+    bottom: 0;
+    left: 280px;
+    right: 0;
+    width: auto;
+    height: 100%;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+
+.board-header.expanded {
+    left: 20px;
+}
+
+.board {
+    display: flex;
+    padding-top: 50px;
+}
+
+.list {
+    margin: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    min-width: 250px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-card-btn {
+    background-color: #5aac44;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.list-items {
+    overflow: auto;
+    max-height: calc(120vh - 400px);
+    /* Adjust height as needed */
+    max-width: 100%;
+    /* Allow horizontal scrolling */
+}
+
+
+.card {
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

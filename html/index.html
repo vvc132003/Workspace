@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello-like Interface</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="menu">
+            <div class="menu-item"><i class="fas fa-th-large"></i> Workspace</div>
+            <div class="menu-item">Các không gian làm việc <i class="fas fa-angle-down"></i></div>
+            <div class="menu-item">Gần đây <i class="fas fa-angle-down"></i></div>
+            <div class="menu-item">Đã đánh dấu sao <i class="fas fa-angle-down"></i></div>
+            <div class="menu-item">Mẫu <i class="fas fa-angle-down"></i></div>
+            <button class="menu-button">Tạo mới</button>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <span class="search-icon"><i class="fa fa-search"></i></span>
+            </div>
+            <div class="menu-icons">
+                <button><i class="fas fa-bell"></i></button>
+                <button><i class="fas fa-envelope"></i></button>
+                <button><i class="fas fa-user"></i></button>
+            </div>
+        </div>
+    </div>
+    <nav class="left-nav" id="leftNav">
+        <div class="workspace">
+            <div class="workspace-header">
+                <img src="../images/images.jpg" alt="">
+                <p>không gian làm việc của Chính</p>
+                <span class="toggle-icon" id="toggleIcon" onclick="toggleNav()">&#9664;</span>
+                <span class="toggle-icon" id="toggleIcon2" onclick="toggleNav()" style="display: none;">&#9654;</span>
+            </div>
+            <hr class="underline">
+            <ul>
+                <li><a href="#"><i class="fas fa-th-large"></i>Bảng</a></li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user"></i> Thành viên
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </li>
+                <li><a href="#"><i class="fas fa-gear"></i>Các cài đặt không gian làm việc</a></li>
+            </ul>
+        </div>
+        <br>
+        <div class="workspace">
+            <div class="tables">
+                <p>Dạng xem không gian làm việc</p>
+            </div>
+            <ul>
+                <li><a href="#"><i class="fas fa-th-large"></i>Bảng</a></li>
+                <li><a href="#"><i class="fas fa-gear"></i>Lịch</a></li>
+            </ul>
+        </div>
+        <div class="workspace">
+            <div class="tables">
+                <p>Các bảng của bạn</p>
+            </div>
+            <br>
+            <ul class="list-items">
+                <li class="list-item">
+                    <a href="#" class="list-item-link">
+                        <img src="" alt="" class="list-item-img">
+                        <p class="list-item-text">Quản lý khách sạn</p>
+                        <ul class="menu">
+                            <li><i class="fa-solid fa-ellipsis"></i></li>
+                            <li><i class="fa-solid fa-ellipsis"></i></li>
+                        </ul>
+                    </a>
+                </li>
+                <!-- Các mục danh sách khác -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="menu-container">
+        <div class="menu-header">
+            <div class="menu-title">Quản lý khách sạn</div>
+            <div class="menu-icons">
+                <!-- <i class="fa-solid fa-star"></i> -->
+                <button><i class="fas fa-star"></i></button>
+                <button><i class="fa-solid fa-users"></i></button>
+                <button class="menu-table"><i class="fa-solid fa-ellipsis-vertical"></i>Bảng</button>
+            </div>
+            <button class="menu-dropdown-btn"><i class="fas fa-angle-down"></i></button>
+        </div>
+        <div class="menu-left">
+            <div class="menu-icons">
+                <button><i class="fa-solid fa-rocket"></i></button>
+                <button><i class="fa-brands fa-twitter"></i></button>
+                <button class="menu-filter"><i class="fa fa-square-caret-down"></i>Bộ lọc</button>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="menu-search">
+            <div class="menu-icons">
+                <img src="../images/images.jpg" alt="Image 1" class="menu-image">
+                <img src="../images/obamajpg.jpg" alt="Image 2" class="menu-image">
+                <img src="../images/pchinhs.jpg" alt="Image 3" class="menu-image">
+            </div>
+        </div>
+        <div class="menu-actions">
+            <div class="menu-share">
+                <button class="menu-table"><i class="fa fa-user-plus"></i> Chia sẻ</button>
+                <button class="icon"><i class="fa-solid fa-ellipsis"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="board-header">
+        <div class="board">
+            <div class="list">
+                <div class="list-header">
+                    <p>Giai đoạn 1: Lập kế hoạch</p>
+                    <button class="add-card-btn">+</button>
+                </div>
+                <div class="list-items">
+                    <div class="card">
+                        <p>Task 1</p>
+                    </div>
+                    <div class="card">
+                        <p>Task 2</p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <script>
+        function toggleNav() {
+            var leftNav = document.getElementById("leftNav");
+            var toggleIcon = document.getElementById("toggleIcon");
+            var toggleIcon2 = document.getElementById("toggleIcon2");
+            var menuContainer = document.querySelector('.menu-container');
+            var boardheader = document.querySelector('.board-header');
+
+
+            leftNav.classList.toggle("hidden");
+            toggleIcon.style.display = toggleIcon.style.display === "none" ? "inline" : "none";
+            toggleIcon2.style.display = toggleIcon2.style.display === "none" ? "inline" : "none";
+
+            var isExpanded = menuContainer.classList.contains('expanded');
+            var isExpanded = boardheader.classList.contains('expanded');
+
+            // Nếu đã mở rộng, chuyển về trạng thái thu gọn và ngược lại
+            if (isExpanded) {
+                menuContainer.classList.remove('expanded');
+                boardheader.classList.remove('expanded');
+            } else {
+                menuContainer.classList.add('expanded');
+                boardheader.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+
+</html>
